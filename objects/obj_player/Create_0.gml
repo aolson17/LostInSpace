@@ -6,8 +6,8 @@ drawn = true
 
 run_speed = .2
 sprint_speed = .2
-max_run_speed = 2
-max_sprint_speed = 3
+max_run_speed = 3
+max_sprint_speed = 6
 crouch_walk_speed = .08
 max_crouch_walk_speed = 1
 
@@ -27,7 +27,7 @@ grav_speed = .25
 
 roll_speed = 5 // How much speed gained from roll
 
-jump_speed = 4
+jump_speed = 6
 variable_jump_factor = .5
 
 run_image_speed_factor = .4 // How much run speed effects the animation speed
