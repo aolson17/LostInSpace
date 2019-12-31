@@ -10,7 +10,7 @@ if scope_key{
 }
 
 if on_ground{
-	if state = knocked{
+	if state = knocked || global.in_dialogue{
 		move = 0
 		move_speed = 0
 		max_move_speed = 0
@@ -121,13 +121,13 @@ if jump_key_released{ // Cancel queued jump
 
 // Recoil Recovery
 if current_recoil > 0{
-	current_recoil-=gun_recoil_recovery
+	current_recoil-=gun_recoil_recovery[gun]
 }else{
 	current_recoil = 0
 }
 
 // Face aim direction when scoped
-if scope_key{
+if scope_key && !global.in_dialogue{
 	if abs(angle_difference(aim_dir,0)) > 90{
 		face = -1
 	}else{
@@ -137,9 +137,9 @@ if scope_key{
 
 // Increase innacuracy when shooting backward
 if face = 1 && (abs(angle_difference(aim_dir,0)) > 90){
-	current_gun_backwards_accuracy_offset = ((abs(angle_difference(aim_dir,0))-90)/90)*gun_backwards_accuracy_offset
+	current_gun_backwards_accuracy_offset = ((abs(angle_difference(aim_dir,0))-90)/90)*gun_backwards_accuracy_offset[gun]
 }else if face = -1 && (abs(angle_difference(aim_dir,180)) > 90){
-	current_gun_backwards_accuracy_offset = ((abs(angle_difference(aim_dir,180))-90)/90)*gun_backwards_accuracy_offset
+	current_gun_backwards_accuracy_offset = ((abs(angle_difference(aim_dir,180))-90)/90)*gun_backwards_accuracy_offset[gun]
 }else{
 	current_gun_backwards_accuracy_offset = 0
 }
@@ -149,32 +149,44 @@ if can_shoot > 0{
 }
 
 if state = run || state = stand || state = jump || state = fall{
-	if ((attack_key&&gun_auto)||(attack_key_pressed&&!gun_auto)) && can_shoot = 0{
-		can_shoot += gun_fire_rate
+	if ((attack_key&&gun_auto[gun])||(attack_key_pressed&&!gun_auto[gun])) && can_shoot = 0{
+		can_shoot += gun_fire_rate[gun]
 		obj_camera.shake += 6
-		repeat(gun_shots){ // Shoot multple times if it should
-			var bullet = instance_create_layer(x+lengthdir_x(gun_length,aim_dir),y-2+lengthdir_y(gun_length,aim_dir),"Bullets",obj_bullet)
-			var dir_range = gun_accuracy+current_recoil+current_gun_backwards_accuracy_offset
+		repeat(gun_shots[gun]){ // Shoot multple times if it should
+			var bullet = instance_create_layer(x+lengthdir_x(gun_length[gun],aim_dir),y-2+lengthdir_y(gun_length[gun],aim_dir),"Bullets",obj_bullet)
+			var dir_range = gun_accuracy[gun]+current_recoil+current_gun_backwards_accuracy_offset
 			var dir_offset = random(dir_range)-(dir_range)/2
-			bullet.xsp = lengthdir_x(gun_bullet_speed,aim_dir+dir_offset)+xsp
-			bullet.ysp = lengthdir_y(gun_bullet_speed,aim_dir+dir_offset)+ysp
+			bullet.xsp = lengthdir_x(gun_bullet_speed[gun],aim_dir+dir_offset)+xsp
+			bullet.ysp = lengthdir_y(gun_bullet_speed[gun],aim_dir+dir_offset)+ysp
 			bullet.image_angle = aim_dir+dir_offset
 		}
 		if on_ground{
-			xsp += lengthdir_x(-gun_knockback,aim_dir+dir_offset)
+			xsp += lengthdir_x(-gun_knockback[gun],aim_dir+dir_offset)
 		}else{
-			xsp += lengthdir_x(-gun_knockback*.25,aim_dir+dir_offset)
+			xsp += lengthdir_x(-gun_knockback[gun]*.25,aim_dir+dir_offset)
 		}
-		ysp += lengthdir_y(-gun_knockback*.25,aim_dir+dir_offset)
+		ysp += lengthdir_y(-gun_knockback[gun]*.25,aim_dir+dir_offset)
 		flash = true
 		alarm[1] = muzzle_flash_frames
 		
 		// Apply recoil
-		current_recoil+=gun_recoil
-		if current_recoil > gun_max_recoil{
-			current_recoil = gun_max_recoil
+		current_recoil+=gun_recoil[gun]
+		if current_recoil > gun_max_recoil[gun]{
+			current_recoil = gun_max_recoil[gun]
 		}
 		
+	}
+}
+
+if mouse_wheel_down(){
+	gun--
+	if gun <0{
+		gun=2
+	}
+}else if mouse_wheel_up(){
+	gun++
+	if gun >2{
+		gun=0
 	}
 }
 

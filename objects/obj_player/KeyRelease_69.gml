@@ -1,6 +1,6 @@
-/// @description Randomize Gun
-
-gun_damage = 1+irandom(1)
+/// @description Randomize Gun - Disabled
+/*
+gun_damage[gun] = 1+irandom(1)
 gun_shots = choose(1,1+irandom(4))
 gun_auto = choose(true,false)
 gun_fire_rate = irandom_range(5,40)

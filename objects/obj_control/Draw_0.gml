@@ -13,25 +13,29 @@ if obj_player.gamepad{
 
 draw_sprite(spr_cursor,0,cursor_x,cursor_y)
 
-var target_inaccuracy = obj_player.gun_accuracy+obj_player.current_recoil+obj_player.current_gun_backwards_accuracy_offset
+var target_inaccuracy = obj_player.gun_accuracy[obj_player.gun]+obj_player.current_recoil+obj_player.current_gun_backwards_accuracy_offset
 shown_innacuracy = lerp(shown_innacuracy,target_inaccuracy,indicator_spd_factor)
 
 
-var dis = point_distance(obj_player.x+lengthdir_x(obj_player.gun_length,obj_player.aim_dir),obj_player.y-1+lengthdir_y(obj_player.gun_length,obj_player.aim_dir),mouse_x,mouse_y)
+var dis = point_distance(obj_player.x+lengthdir_x(obj_player.gun_length[obj_player.gun],obj_player.aim_dir),obj_player.y-1+lengthdir_y(obj_player.gun_length[obj_player.gun],obj_player.aim_dir),mouse_x,mouse_y)
 
-var perp_dis = tan(((shown_innacuracy)/2)*.0175)*dis
+if !global.in_dialogue{
+	perp_dis = tan(((shown_innacuracy)/2)*.0175)*dis
+}
 
 draw_sprite_ext(spr_reticle,0,cursor_x+lengthdir_x(perp_dis,obj_player.aim_dir-90),cursor_y+lengthdir_y(perp_dis,obj_player.aim_dir-90),1,1,obj_player.aim_dir,c_white,1)
 draw_sprite_ext(spr_reticle,0,cursor_x+lengthdir_x(perp_dis,obj_player.aim_dir+90),cursor_y+lengthdir_y(perp_dis,obj_player.aim_dir+90),1,1,obj_player.aim_dir,c_white,1)
+
+
 
 #region Scope Effect
 
 target_scope_alpha = 0
 pos_x = obj_player.x-(obj_camera.x-width/2)
 pos_y = obj_player.y-(obj_camera.y-height/2)
-if obj_player.gun_scope && obj_player.scope_key{ // Player is scoped
+if obj_player.gun_scope[obj_player.gun] && obj_player.scope_key{ // Player is scoped
 	mouse_dis = point_distance(obj_player.x,obj_player.y,mouse_x,mouse_y)
-	scope_draw_dis = 400*obj_player.gun_scope_power // How far to erase black
+	scope_draw_dis = 400*obj_player.gun_scope_power[obj_player.gun] // How far to erase black
 	scope_min_size = 35
 	scope_size = scope_min_size+(max((200-mouse_dis)/100,0))*50
 	

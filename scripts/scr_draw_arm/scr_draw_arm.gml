@@ -21,13 +21,13 @@ if face = 1{
 	var dir = aim_dir
 	draw_sprite_ext(arm_sprite,0,40-arm_turn_offset,40,1,arm_yscale,dir,c_white,1)
 	if flash{
-		draw_sprite_ext(spr_muzzle_flash,0,40+lengthdir_x(gun_length,dir),40+lengthdir_y(gun_length,dir),1,1,dir,c_white,1)
+		draw_sprite_ext(spr_muzzle_flash,0,40+lengthdir_x(gun_length[gun],dir),40+lengthdir_y(gun_length[gun],dir),1,1,dir,c_white,1)
 	}
 }else{
 	var dir = aim_dir+180
 	draw_sprite_ext(arm_sprite,0,40+arm_turn_offset,40,-1,arm_yscale,dir,c_white,1)
 	if flash{
-		draw_sprite_ext(spr_muzzle_flash,0,40-lengthdir_x(gun_length,dir),40-lengthdir_y(gun_length,dir),-1,1,dir,c_white,1)
+		draw_sprite_ext(spr_muzzle_flash,0,40-lengthdir_x(gun_length[gun],dir),40-lengthdir_y(gun_length[gun],dir),-1,1,dir,c_white,1)
 	}
 }
 	

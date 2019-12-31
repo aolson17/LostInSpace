@@ -49,23 +49,60 @@ queue_jump = false // If the player will jump after landing
 muzzle_flash_frames = 1 // How many frames to show muzzle flash
 flash = false
 
-// Gun Stats
-gun_length = 24
-gun_damage = 1
-gun_shots = 1
-gun_auto = true
-gun_fire_rate = 10
-gun_accuracy = 1//20
-gun_max_recoil = 20
-gun_recoil = 5
-gun_recoil_recovery = .3
-gun_knockback = 2
-gun_scope = true
-gun_scope_power = 18
-gun_backwards_accuracy_offset = 60
-gun_bullet_speed = 25
-//gun_laser_sight = false
+#region Gun Stats
 
+enum guns{
+	pistol,
+	shotgun,
+	rifle,
+}
+gun = guns.pistol
+gun_length[guns.pistol] = 24
+gun_damage[guns.pistol] = 1
+gun_shots[guns.pistol] = 1
+gun_auto[guns.pistol] = true
+gun_fire_rate[guns.pistol] = 10
+gun_accuracy[guns.pistol] = 10
+gun_max_recoil[guns.pistol] = 20
+gun_recoil[guns.pistol] = 5
+gun_recoil_recovery[guns.pistol] = .3
+gun_knockback[guns.pistol] = 2
+gun_scope[guns.pistol] = false
+gun_scope_power[guns.pistol] = 18
+gun_backwards_accuracy_offset[guns.pistol] = 60
+gun_bullet_speed[guns.pistol] = 25
+
+gun_length[guns.shotgun] = 24
+gun_damage[guns.shotgun] = .5
+gun_shots[guns.shotgun] = 5
+gun_auto[guns.shotgun] = false
+gun_fire_rate[guns.shotgun] = 10
+gun_accuracy[guns.shotgun] = 30
+gun_max_recoil[guns.shotgun] = 20
+gun_recoil[guns.shotgun] = 5
+gun_recoil_recovery[guns.shotgun] = .3
+gun_knockback[guns.shotgun] = 2
+gun_scope[guns.shotgun] = false
+gun_scope_power[guns.shotgun] = 18
+gun_backwards_accuracy_offset[guns.shotgun] = 60
+gun_bullet_speed[guns.shotgun] = 15
+
+gun_length[guns.rifle] = 24
+gun_damage[guns.rifle] = 1
+gun_shots[guns.rifle] = 1
+gun_auto[guns.rifle] = false
+gun_fire_rate[guns.rifle] = 50
+gun_accuracy[guns.rifle] = 1
+gun_max_recoil[guns.rifle] = 20
+gun_recoil[guns.rifle] = 10
+gun_recoil_recovery[guns.rifle] = .3
+gun_knockback[guns.rifle] = 5
+gun_scope[guns.rifle] = true
+gun_scope_power[guns.rifle] = 18
+gun_backwards_accuracy_offset[guns.rifle] = 60
+gun_bullet_speed[guns.rifle] = 50
+
+#endregion
 
 current_gun_backwards_accuracy_offset = 0
 

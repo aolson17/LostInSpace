@@ -11,7 +11,7 @@ draw_surface(application_surface,0,0)
 
 shader_reset()*/
 
-draw_set_font(-1)
+/*draw_set_font(-1)
 draw_set_color(c_black)
 //scr_draw_outline(10,10,"xsp: "+string(obj_player.xsp),c_white,global.dark,1)
 scr_draw_outline(10,30,"gun_damage: "+string(obj_player.gun_damage),c_white,global.dark,1)

@@ -25,8 +25,8 @@ if !obj_player.scope_key{
 		target_y = (target.y+target.ysp*target_speed_factor)
 	}
 }else{
-	if obj_player.gun_scope = true{
-		var gun_scope_power_divisor = 0.03546113 + 5.304387*power(2.7183,(-0.08925988*obj_player.gun_scope_power))
+	if obj_player.gun_scope[obj_player.gun] = true{
+		var gun_scope_power_divisor = 0.03546113 + 5.304387*power(2.7183,(-0.08925988*obj_player.gun_scope_power[obj_player.gun]))
 		if obj_player.gamepad{
 			target_x = ((target.x+(face_offset*obj_player.face)+target.xsp*target_speed_factor)+obj_player.x+lengthdir_x(75,obj_player.aim_dir))/2
 			target_y = ((target.y+target.ysp*target_speed_factor)+obj_player.y+lengthdir_y(75,obj_player.aim_dir))/2
