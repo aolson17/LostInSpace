@@ -3,19 +3,13 @@ if !surface_exists(arm_surf){
 	arm_surf = surface_create(80,80)
 }
 
-
-if !invincible{
-	draw_sprite_ext(sprite_index,image_index,(x),round(y),image_xscale,image_yscale,image_angle,c_white,image_alpha)
-}else{
-	draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,c_red,image_alpha)
+color_offset = c_white
+if invincible{
+	color_offset = c_red
 }
 
-draw_set_color(c_red)
-if place_meeting(x,y,par_solid)||keyboard_check(ord("B")){
-	draw_rectangle(bbox_left,bbox_top,bbox_right,bbox_bottom,false)
-}
-
-if drawn{
+if hp>0{
+	draw_sprite_ext(sprite_index,image_index,(x),round(y),image_xscale,image_yscale,image_angle,color_offset,image_alpha)
 	
 	if face = 1{
 		var angle_dif = angle_difference(aim_dir,0)
@@ -33,21 +27,31 @@ if drawn{
 		hand_image = 1
 	}
 	
-	draw_sprite_ext(body_sprite,0,(x),round(y),image_xscale,image_yscale,image_angle,c_white,image_alpha)
-	draw_sprite_ext(spr_player_back_hand,hand_image,x+face*6,round(y),image_xscale,image_yscale,image_angle,c_white,image_alpha)
+	draw_sprite_ext(body_sprite,0,(x),round(y),image_xscale,image_yscale,image_angle,color_offset,image_alpha)
 	
-	if abs(angle_dif) > 140{
-		draw_sprite_ext(spr_player_head_back,0,head_pos_x,head_pos_y,image_xscale,image_yscale,image_angle,c_white,image_alpha)
+	if gun = guns.pistol{
+		draw_sprite_ext(spr_player_back_hand,hand_image,x+face*6,round(y),image_xscale,image_yscale,image_angle,color_offset,image_alpha)
+	}
+	
+	if abs(angle_dif) > 140 && gun = guns.pistol{
+		draw_sprite_ext(spr_player_head_back,0,head_pos_x,head_pos_y,image_xscale,image_yscale,image_angle,color_offset,image_alpha)
 	}else if angle_dif > 32{
-		draw_sprite_ext(spr_player_head,1,head_pos_x,head_pos_y,image_xscale,image_yscale,image_angle,c_white,image_alpha)
+		draw_sprite_ext(spr_player_head,1,head_pos_x,head_pos_y,image_xscale,image_yscale,image_angle,color_offset,image_alpha)
 	}else if angle_dif < -32{
-		draw_sprite_ext(spr_player_head,2,head_pos_x,head_pos_y,image_xscale,image_yscale,image_angle,c_white,image_alpha)
+		draw_sprite_ext(spr_player_head,2,head_pos_x,head_pos_y,image_xscale,image_yscale,image_angle,color_offset,image_alpha)
 	}else{
-		draw_sprite_ext(spr_player_head,0,head_pos_x,head_pos_y,image_xscale,image_yscale,image_angle,c_white,image_alpha)
+		draw_sprite_ext(spr_player_head,0,head_pos_x,head_pos_y,image_xscale,image_yscale,image_angle,color_offset,image_alpha)
 	}
 	
 	
 	scr_draw_arm()
+	
+	
+}else{ // If dead
+	
+	
+	
+	draw_sprite(spr_player_death,0,x,y)
 	
 	
 }

@@ -1,6 +1,19 @@
 
 move = right_key-left_key
 
+if hp <= 0{
+	dead_time--
+	if dead_time <= 0{ // Respawn
+		dead_time = 0
+		hp = max_hp
+		x = checkpoint_x
+		y = checkpoint_y
+	}
+}else{
+	if dead_time < dead_time_max{
+		dead_time++
+	}
+}
 
 on_ground = place_meeting(x,y+1,par_solid)
 
@@ -10,7 +23,7 @@ if scope_key{
 }
 
 if on_ground{
-	if state = knocked || global.in_dialogue{
+	if state = knocked || global.in_dialogue || hp<=0{
 		move = 0
 		move_speed = 0
 		max_move_speed = 0
@@ -107,18 +120,6 @@ if jump_key_released{ // Cancel queued jump
 	queue_jump = false
 }
 
-/*if (state != sheath && state != draw) && state = stand || state = sprint || state = run{
-	if sheathe_key{
-		if !sheathed{
-			state = sheath
-			image_index = 0
-		}else{
-			state = draw
-			image_index = 0
-		}
-	}
-}*/
-
 // Recoil Recovery
 if current_recoil > 0{
 	current_recoil-=gun_recoil_recovery[gun]
@@ -178,15 +179,26 @@ if state = run || state = stand || state = jump || state = fall{
 	}
 }
 
-if mouse_wheel_down(){
-	gun--
-	if gun <0{
-		gun=2
+if !global.in_dialogue{
+	if mouse_wheel_down(){
+		gun--
+		if gun <0{
+			gun=2
+		}
+	}else if mouse_wheel_up(){
+		gun++
+		if gun >2{
+			gun=0
+		}
 	}
-}else if mouse_wheel_up(){
-	gun++
-	if gun >2{
-		gun=0
+	if keyboard_check_pressed(ord("1")){
+		gun = guns.pistol
+	}
+	if keyboard_check_pressed(ord("2")){
+		gun = guns.shotgun
+	}
+	if keyboard_check_pressed(ord("3")){
+		gun = guns.rifle
 	}
 }
 

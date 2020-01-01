@@ -1,8 +1,15 @@
 
-max_hp = 100
+max_hp = 99
 hp = max_hp
 
 drawn = true
+
+checkpoint = noone
+checkpoint_x = x
+checkpoint_y = y
+
+dead_time_max = 90
+dead_time = dead_time_max
 
 run_speed = .2
 sprint_speed = .2
@@ -49,6 +56,10 @@ queue_jump = false // If the player will jump after landing
 muzzle_flash_frames = 1 // How many frames to show muzzle flash
 flash = false
 
+ore_green = 0
+ore_purple = 0
+ore_orange = 0
+
 #region Gun Stats
 
 enum guns{
@@ -63,28 +74,28 @@ gun_shots[guns.pistol] = 1
 gun_auto[guns.pistol] = true
 gun_fire_rate[guns.pistol] = 10
 gun_accuracy[guns.pistol] = 10
-gun_max_recoil[guns.pistol] = 20
+gun_max_recoil[guns.pistol] = 35
 gun_recoil[guns.pistol] = 5
 gun_recoil_recovery[guns.pistol] = .3
 gun_knockback[guns.pistol] = 2
 gun_scope[guns.pistol] = false
 gun_scope_power[guns.pistol] = 18
-gun_backwards_accuracy_offset[guns.pistol] = 60
+gun_backwards_accuracy_offset[guns.pistol] = 15
 gun_bullet_speed[guns.pistol] = 25
 
 gun_length[guns.shotgun] = 24
 gun_damage[guns.shotgun] = .5
 gun_shots[guns.shotgun] = 5
 gun_auto[guns.shotgun] = false
-gun_fire_rate[guns.shotgun] = 10
+gun_fire_rate[guns.shotgun] = 20
 gun_accuracy[guns.shotgun] = 30
 gun_max_recoil[guns.shotgun] = 20
-gun_recoil[guns.shotgun] = 5
+gun_recoil[guns.shotgun] = 10
 gun_recoil_recovery[guns.shotgun] = .3
-gun_knockback[guns.shotgun] = 2
+gun_knockback[guns.shotgun] = 4
 gun_scope[guns.shotgun] = false
 gun_scope_power[guns.shotgun] = 18
-gun_backwards_accuracy_offset[guns.shotgun] = 60
+gun_backwards_accuracy_offset[guns.shotgun] = 70
 gun_bullet_speed[guns.shotgun] = 15
 
 gun_length[guns.rifle] = 24
@@ -93,13 +104,13 @@ gun_shots[guns.rifle] = 1
 gun_auto[guns.rifle] = false
 gun_fire_rate[guns.rifle] = 50
 gun_accuracy[guns.rifle] = 1
-gun_max_recoil[guns.rifle] = 20
-gun_recoil[guns.rifle] = 10
-gun_recoil_recovery[guns.rifle] = .3
+gun_max_recoil[guns.rifle] = 100
+gun_recoil[guns.rifle] = 35
+gun_recoil_recovery[guns.rifle] = .6
 gun_knockback[guns.rifle] = 5
 gun_scope[guns.rifle] = true
 gun_scope_power[guns.rifle] = 18
-gun_backwards_accuracy_offset[guns.rifle] = 60
+gun_backwards_accuracy_offset[guns.rifle] = 80
 gun_bullet_speed[guns.rifle] = 50
 
 #endregion

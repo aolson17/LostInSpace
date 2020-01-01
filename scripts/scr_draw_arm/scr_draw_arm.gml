@@ -8,13 +8,23 @@ if face = 1{
 surface_set_target(arm_surf)
 draw_clear_alpha(c_black,0)
 
-var arm_sprite = spr_player_arm
-var arm_yscale = 1
-var arm_turn_offset = 0
-if abs(angle_dif) > 140{
-	arm_sprite = spr_player_arm_back
-	arm_yscale = -1
-	arm_turn_offset = 1
+if gun = guns.pistol{
+	var arm_sprite = spr_player_arm
+	var arm_yscale = 1
+	var arm_turn_offset = 0
+	if abs(angle_dif) > 140{
+		arm_sprite = spr_player_arm_back
+		arm_yscale = -1
+		arm_turn_offset = 1
+	}
+}else if gun = guns.shotgun{
+	var arm_sprite = spr_player_shotgun
+	var arm_yscale = 1
+	var arm_turn_offset = 0
+}else if gun = guns.rifle{
+	var arm_sprite = spr_player_rifle
+	var arm_yscale = 1
+	var arm_turn_offset = 0
 }
 
 if face = 1{
@@ -32,6 +42,6 @@ if face = 1{
 }
 	
 surface_reset_target()
-draw_surface_ext(arm_surf,x-40+face*0,y-40,1,1,0,c_white,1)
+draw_surface_ext(arm_surf,x-40+face*0,y-40,1,1,0,color_offset,1)
 
 

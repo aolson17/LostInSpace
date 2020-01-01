@@ -6,6 +6,12 @@ if place_meeting((x+xsp),(y),par_solid){
 			if object_is_ancestor(col.object_index, par_character){
 				applied_knockback = true
 				xsp = sign(x-col.x)*touch_knockback
+				if col.object_index = obj_crawler && !obj_player.invincible{
+					obj_camera.shake += 10
+					obj_player.hp -= obj_crawler.damage
+					obj_player.invincible = true
+					obj_player.alarm[0] = obj_player.invincibility_frames
+				}
 				//show_message("rev x")
 				scr_collision()
 				exit
@@ -55,6 +61,12 @@ if place_meeting((x),(y+ysp),par_solid){
 			if object_is_ancestor(col.object_index, par_character){
 				applied_knockback = true
 				ysp = sign(y-col.y)*touch_knockback
+				if col.object_index = obj_crawler && !obj_player.invincible{
+					obj_camera.shake += 10
+					obj_player.hp -= obj_crawler.damage
+					obj_player.invincible = true
+					obj_player.alarm[0] = obj_player.invincibility_frames
+				}
 				//show_message("rev y")
 				scr_collision()
 				exit

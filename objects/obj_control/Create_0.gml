@@ -26,7 +26,7 @@ scope_surface = surface_create(width,height)
 
 scope_alpha = 0
 target_scope_alpha = 0
-scope_alpha_spd_factor = .2
+scope_alpha_spd_factor = .3
 
 mouse_dis = 0
 scope_draw_dis = 0

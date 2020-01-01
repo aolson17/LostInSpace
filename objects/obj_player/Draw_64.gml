@@ -1,5 +1,13 @@
 
 draw_set_color(c_white)
+
+
+draw_set_color(c_black)
+draw_set_alpha(1-dead_time/dead_time_max)
+draw_rectangle(0,0,view_wport[0],view_hport[0],false)
+draw_set_alpha(1)
+
+
 /*draw_set_font(-1)
 draw_text(10,10,"aim_dir: "+string(aim_dir))
 draw_text(10,30,"aim_dir: "+string(angle_difference(aim_dir,180)))

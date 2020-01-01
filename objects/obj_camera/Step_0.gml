@@ -25,7 +25,7 @@ if !obj_player.scope_key{
 		target_y = (target.y+target.ysp*target_speed_factor)
 	}
 }else{
-	if obj_player.gun_scope[obj_player.gun] = true{
+	if obj_player.gun_scope[obj_player.gun] = true && !global.in_dialogue{
 		var gun_scope_power_divisor = 0.03546113 + 5.304387*power(2.7183,(-0.08925988*obj_player.gun_scope_power[obj_player.gun]))
 		if obj_player.gamepad{
 			target_x = ((target.x+(face_offset*obj_player.face)+target.xsp*target_speed_factor)+obj_player.x+lengthdir_x(75,obj_player.aim_dir))/2
@@ -62,3 +62,6 @@ y += spd_factor*(target_y-y+shake_offset_y)
 camera_set_view_pos(camera, (x-zoom_width/2), (y-zoom_height/2))
 camera_set_view_angle(camera,shake_offset_r)
 camera_set_view_size(camera,zoom_width,zoom_height)
+
+layer_x("Background",x*.8)
+layer_y("Background",y*.8)
