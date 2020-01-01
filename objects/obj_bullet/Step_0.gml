@@ -1,9 +1,10 @@
 
 
 
-
-x += xsp
-y += ysp
+if !global.in_dialogue{
+	x += xsp
+	y += ysp
+}
 
 var collided = false
 var col_1 = instance_place(x+xsp,y,par_solid)

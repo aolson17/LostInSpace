@@ -72,8 +72,9 @@ if move != 0 && place_meeting(x,y+1,par_solid){
 	face = -move
 }
 
-scr_collision()
-
+if !global.in_dialogue{
+	scr_collision()
+}
 
 
 

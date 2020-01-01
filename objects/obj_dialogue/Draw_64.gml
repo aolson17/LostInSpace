@@ -5,6 +5,7 @@ if global.in_dialogue{
 	draw_sprite_ext(spr_dialogue_box,0,box_x,box_y,scale,scale,0,c_white,1) // Draw the scaled box sprite
 	draw_set_halign(fa_left)
 	draw_set_valign(fa_top)
+	draw_set_color(c_white)
 	draw_set_font(data[info.font]) // Change to the desired font
 	var portrait_image_index = 1
 	if total_text > text_position{

@@ -1,9 +1,10 @@
 
 
 
-
-x += xsp
-y += ysp
+if !global.in_dialogue{
+	x += xsp
+	y += ysp
+}
 
 var temp_xsp = xsp
 var temp_ysp = ysp

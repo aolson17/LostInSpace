@@ -13,7 +13,7 @@ if hp <= 0{
 	instance_destroy()
 }
 
-if fire_time > 0{
+if fire_time > 0 && !global.in_dialogue{
 	fire_time--
 }
 
