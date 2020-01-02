@@ -14,7 +14,7 @@ if !global.in_dialogue && global.dialogue_ready{
 				// Each time scr_dialogue or one of the other dialogue types are ran dialogue stage increases by one
 				scr_dialogue(spr_portrait,global.font,"Master, thank goodness you're alright.")
 				scr_dialogue(spr_player_portrait,global.font,"We crash landed. Where am I?")
-				scr_dialogue(spr_portrait,global.font,"We're on a planet in an unknown star system. My engine has been damaged.")
+				scr_dialogue(spr_portrait,global.font,"We're on an asteroid in an unknown star system. My engine has been damaged.")
 				scr_dialogue(spr_player_portrait,global.font,"So what can I do?")
 				scr_dialogue(spr_portrait,global.font,"One moment, I'm scanning the terrain for minerals...")
 				scr_dialogue(spr_portrait,global.font,")()()()()(")
