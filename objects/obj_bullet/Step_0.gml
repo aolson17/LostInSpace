@@ -1,5 +1,5 @@
 
-
+var played_sound = false
 
 if !global.in_dialogue{
 	x += xsp
@@ -41,6 +41,8 @@ if collided{
 	ysp = 0
 	sprite_index = spr_spark
 	image_speed = 1
+	var sound = audio_play_sound(snd_laser_hit_wall,0,0)
+	audio_sound_gain(sound,global.master_volume*global.sound_volume*.8,0)
 	exit
 }
 
@@ -80,6 +82,11 @@ if (col_1 != noone || col_2 != noone || col_3 != noone){
 			col.hp -= obj_player.gun_damage[obj_player.gun]
 			col.damaged = true
 			col.alarm[1] = col.damaged_time
+			if !played_sound{
+				played_sound = true
+				var sound = audio_play_sound(snd_laser_hit_enemy,0,0)
+				audio_sound_gain(sound,global.master_volume*global.sound_volume*.8,0)
+			}
 		}
 	}
 }
@@ -118,6 +125,11 @@ if (col_1 != noone || col_2 != noone || col_3 != noone){
 			col.hp -= obj_player.gun_damage[obj_player.gun]
 			col.damaged = true
 			col.alarm[1] = col.damaged_time
+			if !played_sound{
+				played_sound = true
+				var sound = audio_play_sound(snd_laser_hit_enemy,0,0)
+				audio_sound_gain(sound,global.master_volume*global.sound_volume*.8,0)
+			}
 		}
 	}
 }
@@ -127,4 +139,8 @@ if collided{
 	ysp = 0
 	sprite_index = spr_spark
 	image_speed = 1
+	if !played_sound{
+		var sound = audio_play_sound(snd_laser_hit_wall,0,0)
+		audio_sound_gain(sound,global.master_volume*global.sound_volume*.8,0)
+	}
 }

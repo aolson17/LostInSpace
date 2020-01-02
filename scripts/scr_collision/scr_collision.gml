@@ -11,6 +11,8 @@ if place_meeting((x+xsp),(y),par_solid){
 					obj_player.hp -= obj_crawler.damage
 					obj_player.invincible = true
 					obj_player.alarm[0] = obj_player.invincibility_frames
+					var sound = audio_play_sound(snd_shotgun,0,0)
+					audio_sound_gain(sound,global.master_volume*global.sound_volume*.9,0)
 				}
 				//show_message("rev x")
 				scr_collision()
@@ -66,6 +68,8 @@ if place_meeting((x),(y+ysp),par_solid){
 					obj_player.hp -= obj_crawler.damage
 					obj_player.invincible = true
 					obj_player.alarm[0] = obj_player.invincibility_frames
+					var sound = audio_play_sound(snd_shotgun,0,0)
+					audio_sound_gain(sound,global.master_volume*global.sound_volume*.9,0)
 				}
 				//show_message("rev y")
 				scr_collision()

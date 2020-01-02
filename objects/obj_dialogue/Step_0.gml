@@ -31,6 +31,8 @@ if global.in_dialogue{
 	}
 	
 	if keyboard_check_pressed(talk_key) && skippable{
+		var sound = audio_play_sound(snd_menu,0,0)
+		audio_sound_gain(sound,global.master_volume*global.sound_volume*.8,0)
 		if ds_list_size(dialogue) <= 1{ // If there is no more queued dialogue pages
 			global.in_dialogue = false
 			global.dialogue_ready = false
