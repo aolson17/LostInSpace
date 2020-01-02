@@ -57,9 +57,9 @@ queue_jump = false // If the player will jump after landing
 muzzle_flash_frames = 1 // How many frames to show muzzle flash
 flash = false
 
-ore_green = 0
-ore_purple = 0
-ore_orange = 0
+ore_green = 1
+ore_purple = 1
+ore_orange = 1
 
 #region Gun Stats
 
