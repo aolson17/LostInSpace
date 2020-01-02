@@ -25,7 +25,7 @@ if !global.in_dialogue && global.dialogue_ready{
 			}else if dialogue_stage >= 2{ // So after the player goes through the first 2 pages of dialogue dialogue stage will be 2 and this text will show instead
 				scr_dialogue(spr_portrait,global.font,"Did you find all 3 minerals?")
 				scr_dialogue(spr_player_portrait,global.font,"Not yet.")
-				scr_dialogue(spr_portrait,global.font,"Continue your search, I'll be waiting.")
+				scr_dialogue(spr_portrait,global.font,"Continue your search, I'll be waiting. Place the minerals in the shuttle when ready!")
 			}
 		}
 	}
