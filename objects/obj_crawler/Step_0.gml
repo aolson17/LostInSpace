@@ -12,7 +12,7 @@ if hp <= 0{
 }
 
 // Turn at walls and ledges
-if !direction_cooldown && (!place_meeting(x+sprite_width*face+face*5,y+sprite_height/2+2,par_solid) || place_meeting(x+xsp+face*-5,y,par_solid)){
+if !direction_cooldown && (!place_meeting(x-sprite_width-face*5,y+sprite_height/2+2,par_solid) || place_meeting(x+xsp+face*-5,y,par_solid)){
 	target_direction*=-1
 	direction_cooldown = true
 	alarm[2] = direction_cooldown_time

@@ -1,5 +1,4 @@
 
-
 if !invincible{
 	draw_self()
 }else{
