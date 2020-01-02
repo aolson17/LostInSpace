@@ -62,7 +62,7 @@ if col_1 != noone || col_2 != noone || col_3 != noone{
 	}else if col_3 != noone && object_is_ancestor(col_3.object_index, par_player){
 		col = col_3
 	}
-	if col.object_index = obj_player && !obj_player.invincible{
+	if col != noone && col.object_index = obj_player && !obj_player.invincible{
 		if sprite_index = spr_plant_projectile{
 			sprite_index = spr_blood
 			
