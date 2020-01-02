@@ -196,11 +196,22 @@ if !global.in_dialogue{
 	if keyboard_check_pressed(ord("1")){
 		gun = guns.pistol
 	}
-	if keyboard_check_pressed(ord("2")){
+	if keyboard_check_pressed(ord("3")){
 		gun = guns.shotgun
 	}
-	if keyboard_check_pressed(ord("3")){
+	if keyboard_check_pressed(ord("2")){
 		gun = guns.rifle
+	}
+	
+	if !got_rifle{
+		if gun = guns.rifle{
+			gun = guns.pistol
+		}
+	}
+	if !got_shotgun{
+		if gun = guns.shotgun{
+			gun = guns.pistol
+		}
 	}
 }
 

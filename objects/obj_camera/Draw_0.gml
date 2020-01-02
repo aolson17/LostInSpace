@@ -49,17 +49,17 @@ scr_draw_outline(x_4+16,y_4+6,"x"+string(obj_player.ore_orange),c_white,c_black,
 switch(obj_player.gun){
 	case guns.pistol:
 		draw_sprite_ext(spr_hud_pistol,1,x_1,y_1,2,2,0,c_white,1)
-		draw_sprite_ext(spr_hud_rifle,0,x_2,y_1,2,2,0,c_white,1)
-		draw_sprite_ext(spr_hud_shotgun,0,x_3,y_1,2,2,0,c_white,1)
+		if obj_player.got_rifle{draw_sprite_ext(spr_hud_rifle,0,x_2,y_1,2,2,0,c_white,1)}
+		if obj_player.got_shotgun{draw_sprite_ext(spr_hud_shotgun,0,x_3,y_1,2,2,0,c_white,1)}
 		break
 	case guns.shotgun:
 		draw_sprite_ext(spr_hud_pistol,0,x_1,y_1,2,2,0,c_white,1)
-		draw_sprite_ext(spr_hud_rifle,0,x_2,y_1,2,2,0,c_white,1)
+		if obj_player.got_rifle{draw_sprite_ext(spr_hud_rifle,0,x_2,y_1,2,2,0,c_white,1)}
 		draw_sprite_ext(spr_hud_shotgun,1,x_3,y_1,2,2,0,c_white,1)
 		break
 	case guns.rifle:
 		draw_sprite_ext(spr_hud_pistol,0,x_1,y_1,2,2,0,c_white,1)
 		draw_sprite_ext(spr_hud_rifle,1,x_2,y_1,2,2,0,c_white,1)
-		draw_sprite_ext(spr_hud_shotgun,0,x_3,y_1,2,2,0,c_white,1)
+		if obj_player.got_shotgun{draw_sprite_ext(spr_hud_shotgun,0,x_3,y_1,2,2,0,c_white,1)}
 		break
 }

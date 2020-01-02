@@ -2,7 +2,8 @@
 max_hp = 99
 hp = max_hp
 
-drawn = true
+got_rifle = false
+got_shotgun = false
 
 checkpoint = noone
 checkpoint_x = x

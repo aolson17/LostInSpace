@@ -119,6 +119,14 @@
             }
         },
         {
+            "Key": "1041b7a5-737e-4ba0-b724-a461864477bf",
+            "Value": {
+                "id": "12884a59-9240-4632-84b4-0498277921a8",
+                "resourcePath": "sprites\\spr_shotgun\\spr_shotgun.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "11be21e4-0520-4ce9-9c3a-431251c4b009",
             "Value": {
                 "id": "e694ecf2-46e8-4326-a564-805a50a4cf71",
@@ -187,6 +195,14 @@
             "Value": {
                 "id": "b359dda2-71e2-4a12-a1a4-280d4211235f",
                 "resourcePath": "objects\\obj_barrier_orange\\obj_barrier_orange.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "1e6597ca-fc1e-4b91-a875-fb6ecf08b4dc",
+            "Value": {
+                "id": "a8e7426a-99a1-402b-9988-8f9d3545678e",
+                "resourcePath": "objects\\obj_shotgun\\obj_shotgun.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -428,6 +444,14 @@
                 "id": "07176ecd-9f55-45c2-8bdb-a556f043a143",
                 "resourcePath": "scripts\\scr_draw_arm\\scr_draw_arm.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "52065c91-ac95-4c9a-b6c1-9b4c2300a555",
+            "Value": {
+                "id": "30644c4a-8b91-4a02-a7b2-5ea8193e84d6",
+                "resourcePath": "sprites\\spr_rifle\\spr_rifle.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1076,6 +1100,14 @@
                 "id": "cb777675-d5ea-4d6f-93d2-30d765ce4a18",
                 "resourcePath": "scripts\\fall\\fall.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "d41c2d36-45fe-4572-aa61-a21acb3f184e",
+            "Value": {
+                "id": "07e467b2-26c5-45d9-b67e-b89fab9a0be1",
+                "resourcePath": "objects\\obj_rifle\\obj_rifle.yy",
+                "resourceType": "GMObject"
             }
         },
         {
