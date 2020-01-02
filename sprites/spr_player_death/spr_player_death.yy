@@ -8,7 +8,7 @@
     "VTile": false,
     "bbox_bottom": 29,
     "bbox_left": 0,
-    "bbox_right": 26,
+    "bbox_right": 27,
     "bbox_top": 0,
     "bboxmode": 0,
     "colkind": 1,
@@ -16,24 +16,24 @@
     "edgeFiltering": false,
     "frames": [
         {
-            "id": "33149021-8f80-4102-aa44-a5194dd7a4e6",
+            "id": "658451af-2313-477c-ae8e-e1e6b1ea474e",
             "modelName": "GMSpriteFrame",
             "mvc": "1.0",
             "SpriteId": "f0a17f1d-a6a8-401e-b3d4-bdc02aea4045",
             "compositeImage": {
-                "id": "1f33901f-5cc6-4012-b8a9-165ffe541519",
+                "id": "ef844593-3bc4-41f8-a7c8-f6be2c2a92f8",
                 "modelName": "GMSpriteImage",
                 "mvc": "1.0",
-                "FrameId": "33149021-8f80-4102-aa44-a5194dd7a4e6",
+                "FrameId": "658451af-2313-477c-ae8e-e1e6b1ea474e",
                 "LayerId": "00000000-0000-0000-0000-000000000000"
             },
             "images": [
                 {
-                    "id": "bb9e0ad9-d90b-46ba-9627-2348aad7581a",
+                    "id": "5b6a9561-7158-4f77-b269-d4f35e7a7f12",
                     "modelName": "GMSpriteImage",
                     "mvc": "1.0",
-                    "FrameId": "33149021-8f80-4102-aa44-a5194dd7a4e6",
-                    "LayerId": "fbf2f268-2ac5-4cf3-9402-2764d735c2f7"
+                    "FrameId": "658451af-2313-477c-ae8e-e1e6b1ea474e",
+                    "LayerId": "a3447db1-1002-4dda-b0e9-99375cba16b4"
                 }
             ]
         }
@@ -43,7 +43,7 @@
     "height": 30,
     "layers": [
         {
-            "id": "fbf2f268-2ac5-4cf3-9402-2764d735c2f7",
+            "id": "a3447db1-1002-4dda-b0e9-99375cba16b4",
             "modelName": "GMImageLayer",
             "mvc": "1.0",
             "SpriteId": "f0a17f1d-a6a8-401e-b3d4-bdc02aea4045",
@@ -64,7 +64,7 @@
     "swfPrecision": 2.525,
     "textureGroupId": "1225f6b0-ac20-43bd-a82e-be73fa0b6f4f",
     "type": 0,
-    "width": 27,
+    "width": 28,
     "xorig": 15,
     "yorig": 8
 }

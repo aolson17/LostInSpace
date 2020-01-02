@@ -399,6 +399,14 @@
             }
         },
         {
+            "Key": "44712efc-448d-46b8-a3ef-1ea28dd252c4",
+            "Value": {
+                "id": "69c256ff-0f09-4eac-8ff8-3a00ede96983",
+                "resourcePath": "objects\\obj_event_sniper\\obj_event_sniper.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "44a7c3a6-c1f5-49d4-ac88-8a4f49af4f00",
             "Value": {
                 "id": "8c326b9a-043e-4cac-b65e-8c6760abf164",
@@ -815,6 +823,14 @@
             }
         },
         {
+            "Key": "99e415ee-1cd5-40c8-9178-b54050ccf4f5",
+            "Value": {
+                "id": "ce12c10d-c1ce-45cf-b7b0-a687e23733fc",
+                "resourcePath": "objects\\obj_event_shotgun\\obj_event_shotgun.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "9d603411-9a62-453b-8222-d49028fa0c0f",
             "Value": {
                 "id": "7bbcc3d4-8c1c-486a-be11-fe24fa7174e2",
@@ -947,6 +963,14 @@
             "Value": {
                 "id": "73639945-169d-4cf0-9f35-04810a10dd69",
                 "resourcePath": "objects\\obj_test_event_2\\obj_test_event_2.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "ac74c331-309a-425e-99df-8a42a6657302",
+            "Value": {
+                "id": "93b3109f-8b44-40bc-9777-65ef4f53bcae",
+                "resourcePath": "objects\\obj_event_landing\\obj_event_landing.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -1292,6 +1316,14 @@
                 "id": "5de3c1de-db4f-42a2-a866-f786828d3437",
                 "resourcePath": "sprites\\spr_dust_wave\\spr_dust_wave.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "f62d6999-66fb-4882-a3a4-a60d61115efc",
+            "Value": {
+                "id": "9bf27eeb-cd28-45bb-9ac9-892379f4a43a",
+                "resourcePath": "objects\\obj_event_foundall\\obj_event_foundall.yy",
+                "resourceType": "GMObject"
             }
         },
         {
