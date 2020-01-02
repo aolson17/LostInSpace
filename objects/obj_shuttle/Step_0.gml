@@ -14,7 +14,8 @@ if instance_number(obj_player) > 0{
 	if !global.in_dialogue && global.dialogue_ready && can_win{
 		if point_distance(x,y,obj_player.x,obj_player.y) < obj_dialogue.range{
 			if keyboard_check_released(ord("E")){
-				room_goto(End)
+				var transition = instance_create_layer(x,y,"FrontInstances",obj_transition)
+				transition.room_target = End
 			}
 		}
 	}
