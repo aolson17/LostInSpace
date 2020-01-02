@@ -1,6 +1,6 @@
 
 
-damage = 8
+damage = 1
 
 state = crawler_run
 
@@ -18,7 +18,7 @@ event_inherited()
 xsp = 0
 ysp = 0
 
-max_hp = 5
+max_hp = 2
 hp = max_hp
 
 hp_width = 15

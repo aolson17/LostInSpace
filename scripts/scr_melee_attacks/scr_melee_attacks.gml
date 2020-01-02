@@ -4,7 +4,7 @@ if state = melee_attack{
 	if !(image_index >= 1 && image_index <= 1){
 		exit
 	}
-	damage = 15
+	damage = 10
 	knockback = 10
 	shake = 18
 	mask_index = spr_melee_attack

@@ -1,6 +1,6 @@
 
 
-damage = 8
+damage = 4
 knockback = 3
 
 fire_rate = 50
@@ -10,7 +10,7 @@ mask_index = spr_plant_mask
 
 event_inherited()
 
-max_hp = 10
+max_hp = 8
 hp = max_hp
 
 hp_width = 25

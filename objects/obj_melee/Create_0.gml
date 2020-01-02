@@ -14,7 +14,7 @@ event_inherited()
 xsp = 0
 ysp = 0
 
-max_hp = 20
+max_hp = 15
 hp = max_hp
 
 hp_width = 30
