@@ -10,6 +10,8 @@ if hp_alpha != .3 && hp > 0 && damaged{
 if hp <= 0{
 	image_speed = 0
 	instance_create_layer(x,y,layer,obj_explosion)
+	var sound = audio_play_sound(snd_laser_kill,0,0)
+	audio_sound_gain(sound,global.master_volume*global.sound_volume*.8,0)
 	instance_destroy()
 }
 
@@ -29,6 +31,8 @@ if instance_number(obj_player)>0 && distance_to_object(obj_player) < sight_range
 		bullet.damage = damage
 		bullet.knockback = knockback
 		bullet.image_angle = aim_dir+dir_offset
+		var sound = audio_play_sound(snd_shotgun,0,0)
+		audio_sound_gain(sound,global.master_volume*global.sound_volume*.8,0)
 	}
 	target_aim_dir = point_direction(x,y,obj_player.x,obj_player.y)
 }

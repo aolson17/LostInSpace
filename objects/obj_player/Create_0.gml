@@ -11,6 +11,7 @@ checkpoint_y = y
 
 dead_time_max = 90
 dead_time = dead_time_max
+played_death_sound = false
 
 run_speed = .2
 sprint_speed = .2

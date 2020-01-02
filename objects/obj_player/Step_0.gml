@@ -2,6 +2,11 @@
 move = right_key-left_key
 
 if hp <= 0{
+	if !played_death_sound{
+		played_death_sound = true
+		var sound = audio_play_sound(snd_death,0,0)
+		audio_sound_gain(sound,global.master_volume*global.sound_volume*.8,0)
+	}
 	dead_time--
 	if dead_time <= 0{ // Respawn
 		dead_time = 0
@@ -12,6 +17,7 @@ if hp <= 0{
 		ysp = 0
 	}
 }else{
+	played_death_sound = false
 	if dead_time < dead_time_max{
 		dead_time++
 	}
@@ -155,6 +161,12 @@ if state = run || state = stand || state = jump || state = fall{
 	if ((attack_key&&gun_auto[gun])||(attack_key_pressed&&!gun_auto[gun])) && can_shoot = 0{
 		can_shoot += gun_fire_rate[gun]
 		obj_camera.shake += 6
+		if gun != guns.shotgun{
+			var sound = audio_play_sound(snd_laser,0,0)
+		}else{
+			var sound = audio_play_sound(snd_shotgun,0,0)
+		}
+		audio_sound_gain(sound,global.master_volume*global.sound_volume*.8,0)
 		repeat(gun_shots[gun]){ // Shoot multple times if it should
 			var bullet = instance_create_layer(x+lengthdir_x(gun_length[gun],aim_dir),y-2+lengthdir_y(gun_length[gun],aim_dir),"Bullets",obj_bullet)
 			var dir_range = gun_accuracy[gun]+current_recoil+current_gun_backwards_accuracy_offset
@@ -183,23 +195,33 @@ if state = run || state = stand || state = jump || state = fall{
 
 if !global.in_dialogue{
 	if mouse_wheel_down(){
+		var sound = audio_play_sound(snd_weapon_switch,0,0)
+		audio_sound_gain(sound,global.master_volume*global.sound_volume*.8,0)
 		gun--
 		if gun <0{
 			gun=2
 		}
 	}else if mouse_wheel_up(){
+		var sound = audio_play_sound(snd_weapon_switch,0,0)
+		audio_sound_gain(sound,global.master_volume*global.sound_volume*.8,0)
 		gun++
 		if gun >2{
 			gun=0
 		}
 	}
 	if keyboard_check_pressed(ord("1")){
+		var sound = audio_play_sound(snd_weapon_switch,0,0)
+		audio_sound_gain(sound,global.master_volume*global.sound_volume*.8,0)
 		gun = guns.pistol
 	}
 	if keyboard_check_pressed(ord("3")){
+		var sound = audio_play_sound(snd_weapon_switch,0,0)
+		audio_sound_gain(sound,global.master_volume*global.sound_volume*.8,0)
 		gun = guns.shotgun
 	}
 	if keyboard_check_pressed(ord("2")){
+		var sound = audio_play_sound(snd_weapon_switch,0,0)
+		audio_sound_gain(sound,global.master_volume*global.sound_volume*.8,0)
 		gun = guns.rifle
 	}
 	

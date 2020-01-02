@@ -22,6 +22,8 @@ indicator_spd_factor = .2
 
 #region Scope Effect
 
+played_scope_sound = false
+
 scope_surface = surface_create(width,height)
 
 scope_alpha = 0

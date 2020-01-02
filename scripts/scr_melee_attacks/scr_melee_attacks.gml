@@ -6,7 +6,7 @@ if state = melee_attack{
 	}
 	damage = 15
 	knockback = 10
-	shake = 12
+	shake = 18
 	mask_index = spr_melee_attack
 	var list = ds_list_create()
 	instance_place_list(x,y,par_player,list,false)

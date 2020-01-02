@@ -88,4 +88,6 @@ if collided{
 	ysp = 0
 	sprite_index = spr_spark
 	image_speed = 1
+	var sound = audio_play_sound(snd_laser_hit_enemy,0,0)
+	audio_sound_gain(sound,global.master_volume*global.sound_volume*.8,0)
 }

@@ -17,6 +17,11 @@ target_scope_alpha = 0
 pos_x = obj_player.x-(obj_camera.x-width/2)
 pos_y = obj_player.y-(obj_camera.y-height/2)
 if obj_player.gun_scope[obj_player.gun] && obj_player.scope_key && !global.in_dialogue{ // Player is scoped
+	if !played_scope_sound{
+		played_scope_sound = true
+		var sound = audio_play_sound(snd_zoom,0,0)
+		audio_sound_gain(sound,global.master_volume*global.sound_volume*.8,0)
+	}
 	mouse_dis = point_distance(obj_player.x,obj_player.y,mouse_x,mouse_y)
 	scope_draw_dis = 400*obj_player.gun_scope_power[obj_player.gun] // How far to erase black
 	scope_min_size = 35
@@ -25,6 +30,8 @@ if obj_player.gun_scope[obj_player.gun] && obj_player.scope_key && !global.in_di
 	if mouse_dis > 50{
 		target_scope_alpha = (min(1-(200-mouse_dis)/150,.95))
 	}
+}else{
+	played_scope_sound = false
 }
 
 scope_alpha = lerp(scope_alpha,target_scope_alpha,scope_alpha_spd_factor)
