@@ -17,7 +17,7 @@ if !global.in_dialogue && global.dialogue_ready{
 				scr_dialogue(spr_portrait,global.font,"We're on a planet in an unknown star system. My engine has been damaged.")
 				scr_dialogue(spr_player_portrait,global.font,"So what can I do?")
 				scr_dialogue(spr_portrait,global.font,"One moment, I'm scanning the terrain for minerals...")
-				scr_dialogue(spr_portrait,global.font,"...")
+				scr_dialogue(spr_portrait,global.font,")()()()()(")
 				scr_dialogue(spr_portrait,global.font,"Done. There are 3 minerals underground that you can use to repair and re-fuel the engine. They are colored crystal formations. Go underground and find them.")
 				scr_dialogue(spr_player_portrait,global.font,"Alright, I'll be back soon.")
 				scr_dialogue(spr_player_portrait,global.font,"(I can move with A & D, jump with Space, and use the mouse to aim and shoot.)")
