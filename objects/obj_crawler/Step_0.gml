@@ -12,7 +12,7 @@ if hp <= 0{
 }
 
 // Turn at walls and ledges
-if !direction_cooldown && (!place_meeting(x+sprite_width*sign(xsp)+sign(xsp)*5,y+sprite_height/2+2,par_solid) || place_meeting(x+xsp+face*-5,y,par_solid)){
+if !direction_cooldown && (!place_meeting(x+sprite_width*face+face*5,y+sprite_height/2+2,par_solid) || place_meeting(x+xsp+face*-5,y,par_solid)){
 	target_direction*=-1
 	direction_cooldown = true
 	alarm[2] = direction_cooldown_time
@@ -72,7 +72,7 @@ if move != 0 && place_meeting(x,y+1,par_solid){
 	face = -move
 }
 
-if !global.in_dialogue{
+if instance_number(obj_dialogue) = 0 || !global.in_dialogue{
 	scr_collision()
 }
 

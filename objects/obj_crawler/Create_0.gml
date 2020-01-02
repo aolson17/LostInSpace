@@ -18,10 +18,10 @@ event_inherited()
 xsp = 0
 ysp = 0
 
-max_hp = 10
+max_hp = 5
 hp = max_hp
 
-hp_width = 25
+hp_width = 15
 
 attack_distance = 35
 

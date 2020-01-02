@@ -7,10 +7,43 @@ if !global.in_dialogue{
 }
 
 var collided = false
+
+var col_1 = instance_place(x+xsp,y,obj_melee_shield)
+var col_2 = instance_place(x+xsp*.2,y,obj_melee_shield)
+var col_3 = instance_place(x+xsp*.6,y,obj_melee_shield)
+if (col_1 != noone || col_2 != noone || col_3 != noone){
+	while(!place_meeting(x+sign(xsp),y,obj_melee_shield) && abs(xsp) > 1){
+		x += sign(xsp)
+		xsp--
+	}
+	xsp = 0
+	collided = true
+}
+var col_1 = instance_place(x,y+ysp,obj_melee_shield)
+var col_2 = instance_place(x,y+ysp*.2,obj_melee_shield)
+var col_3 = instance_place(x,y+ysp*.6,obj_melee_shield)
+if (col_1 != noone || col_2 != noone || col_3 != noone){
+	while(!place_meeting(x,y+sign(ysp),par_solid) && abs(ysp) > 1){
+		y += sign(ysp)
+		ysp--
+	}
+	ysp = 0
+	collided = true
+}
+if collided{
+	xsp = 0
+	ysp = 0
+	sprite_index = spr_spark
+	image_speed = 1
+	exit
+}
+
+
+
 var col_1 = instance_place(x+xsp,y,par_solid)
 var col_2 = instance_place(x+xsp*.2,y,par_solid)
 var col_3 = instance_place(x+xsp*.6,y,par_solid)
-if col_1 != noone || col_2 != noone || col_3 != noone{
+if (col_1 != noone || col_2 != noone || col_3 != noone){
 	while(!place_meeting(x+sign(xsp),y,par_solid) && abs(xsp) > 1){
 		x += sign(xsp)
 		xsp--
@@ -45,7 +78,7 @@ if col_1 != noone || col_2 != noone || col_3 != noone{
 var col_1 = instance_place(x,y+ysp,par_solid)
 var col_2 = instance_place(x,y+ysp*.2,par_solid)
 var col_3 = instance_place(x,y+ysp*.6,par_solid)
-if place_meeting(x,y+ysp,par_solid) || place_meeting(x,y+ysp*.3,par_solid) || place_meeting(x,y+ysp*.6,par_solid){
+if (col_1 != noone || col_2 != noone || col_3 != noone){
 	while(!place_meeting(x,y+sign(ysp),par_solid) && abs(ysp) > 1){
 		y += sign(ysp)
 		ysp--

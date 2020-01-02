@@ -101,7 +101,7 @@ if move != 0 && place_meeting(x,y+1,par_solid){
 }
 
 scr_collision()
-scr_executioner_attacks()
+//scr_executioner_attacks()
 
 
 

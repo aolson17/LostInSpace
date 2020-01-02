@@ -8,6 +8,8 @@ if hp <= 0{
 		hp = max_hp
 		x = checkpoint_x
 		y = checkpoint_y
+		xsp = 0
+		ysp = 0
 	}
 }else{
 	if dead_time < dead_time_max{

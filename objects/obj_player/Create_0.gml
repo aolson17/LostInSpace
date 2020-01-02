@@ -99,7 +99,7 @@ gun_backwards_accuracy_offset[guns.shotgun] = 70
 gun_bullet_speed[guns.shotgun] = 15
 
 gun_length[guns.rifle] = 24
-gun_damage[guns.rifle] = 1
+gun_damage[guns.rifle] = 4
 gun_shots[guns.rifle] = 1
 gun_auto[guns.rifle] = false
 gun_fire_rate[guns.rifle] = 50

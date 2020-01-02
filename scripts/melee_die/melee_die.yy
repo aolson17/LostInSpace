@@ -1,8 +1,8 @@
 {
-    "id": "1eb10b91-28af-4eb3-b45b-bc1d1da6e176",
+    "id": "5cf24c92-7405-4506-95ae-eb55eb9e29cf",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_executioner_attacks",
+    "name": "melee_die",
     "IsCompatibility": false,
     "IsDnD": false
 }
